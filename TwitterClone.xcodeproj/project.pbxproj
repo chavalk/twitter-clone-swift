@@ -65,7 +65,6 @@
 				BEA859FC2945B6A700A96A37 /* Controllers */,
 				BEA859E82945AE7D00A96A37 /* AppDelegate.swift */,
 				BEA859EA2945AE7D00A96A37 /* SceneDelegate.swift */,
-				BEA859EC2945AE7D00A96A37 /* MainTabBarViewController.swift */,
 				BEA859F12945AE7F00A96A37 /* Assets.xcassets */,
 				BEA859F32945AE7F00A96A37 /* LaunchScreen.storyboard */,
 				BEA859F62945AE7F00A96A37 /* Info.plist */,
@@ -84,6 +83,7 @@
 		BEA859FD2945B6B900A96A37 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BEA859EC2945AE7D00A96A37 /* MainTabBarViewController.swift */,
 				BEA859FE2945BA6A00A96A37 /* HomeViewController.swift */,
 				BEA85A002945BA8600A96A37 /* SearchViewController.swift */,
 				BEA85A022945BAA600A96A37 /* NotificationsViewController.swift */,
