@@ -102,6 +102,30 @@ class TweetTableViewCell: UITableViewCell {
         contentView.addSubview(likeButton)
         contentView.addSubview(shareButton)
         configureConstraints()
+        configureButtons()
+    }
+    
+    @objc private func didTapReply() {
+        
+    }
+    
+    @objc private func didTapRetweet() {
+        
+    }
+    
+    @objc private func didTapLike() {
+        
+    }
+    
+    @objc private func didTapShare() {
+        
+    }
+    
+    private func configureButtons() {
+        replyButton.addTarget(self, action: #selector(didTapReply), for: .touchUpInside)
+        retweetButton.addTarget(self, action: #selector(didTapRetweet), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
     }
     
     private func configureConstraints() {
