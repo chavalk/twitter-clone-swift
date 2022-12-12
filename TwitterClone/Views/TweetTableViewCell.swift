@@ -41,7 +41,8 @@ class TweetTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(avatarImageView)
-        
+        contentView.addSubview(displayNameLabel)
+        contentView.addSubview(usernameLabel)
         configureConstraints()
     }
     
@@ -53,7 +54,19 @@ class TweetTableViewCell: UITableViewCell {
             avatarImageView.widthAnchor.constraint(equalToConstant: 50)
         ]
         
+        let displayNameLabelConstraints = [
+            displayNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 20),
+            displayNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20)
+        ]
+        
+        let usernameLabelConstraints = [
+            usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.trailingAnchor, constant: 10),
+            usernameLabel.centerYAnchor.constraint(equalTo: displayNameLabel.centerYAnchor)
+        ]
+        
         NSLayoutConstraint.activate(avatarImageViewConstraints)
+        NSLayoutConstraint.activate(displayNameLabelConstraints)
+        NSLayoutConstraint.activate(usernameLabelConstraints)
     }
     
     required init?(coder: NSCoder) {
