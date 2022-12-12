@@ -18,6 +18,13 @@ class HomeViewController: UIViewController {
         let middleView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
         middleView.addSubview(logoImageView)
         navigationItem.titleView = middleView
+        
+        let profileImage = UIImage(systemName: "person")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(didTapProfile))
+    }
+    
+    @objc private func didTapProfile() {
+        print("Pressed profile")
     }
     
     private let timelineTableView: UITableView = {
