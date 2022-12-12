@@ -106,19 +106,19 @@ class TweetTableViewCell: UITableViewCell {
     }
     
     @objc private func didTapReply() {
-        
+        delegate?.tweetTableViewCellDidTapReply()
     }
     
     @objc private func didTapRetweet() {
-        
+        delegate?.tweetTableViewCellDidTapRetweet()
     }
     
     @objc private func didTapLike() {
-        
+        delegate?.tweetTableViewCellDidTapLike()
     }
     
     @objc private func didTapShare() {
-        
+        delegate?.tweetTableViewCellDidTapShare()
     }
     
     private func configureButtons() {
