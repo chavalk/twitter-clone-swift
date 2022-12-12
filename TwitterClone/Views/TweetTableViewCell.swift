@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol TweetTableViewCellDelegate: AnyObject {
+    func tweetTableViewCellDidTapReply()
+    func tweetTableViewCellDidTapRetweet()
+    func tweetTableViewCellDidTapLike()
+    func tweetTableViewCellDidTapShare()
+}
+
 class TweetTableViewCell: UITableViewCell {
 
     static let identifier = "TweetTableViewCell"
