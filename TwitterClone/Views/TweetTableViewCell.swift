@@ -114,14 +114,20 @@ class TweetTableViewCell: UITableViewCell {
         let tweetTextContentLabelConstraints = [
             tweetTextContentLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             tweetTextContentLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 10),
-            tweetTextContentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-            tweetTextContentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
+            tweetTextContentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+        ]
+        
+        let replyButtonConstraints = [
+            replyButton.leadingAnchor.constraint(equalTo: tweetTextContentLabel.leadingAnchor),
+            replyButton.topAnchor.constraint(equalTo: tweetTextContentLabel.bottomAnchor, constant: 10),
+            replyButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         ]
         
         NSLayoutConstraint.activate(avatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
         NSLayoutConstraint.activate(usernameLabelConstraints)
         NSLayoutConstraint.activate(tweetTextContentLabelConstraints)
+        NSLayoutConstraint.activate(replyButtonConstraints)
     }
     
     required init?(coder: NSCoder) {
