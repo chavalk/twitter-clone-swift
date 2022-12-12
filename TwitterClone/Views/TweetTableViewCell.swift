@@ -23,6 +23,14 @@ class TweetTableViewCell: UITableViewCell {
         return imageView
     }()
 
+    private let displayNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Jose Garcia"
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(avatarImageView)
