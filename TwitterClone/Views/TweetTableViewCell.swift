@@ -18,6 +18,8 @@ class TweetTableViewCell: UITableViewCell {
 
     static let identifier = "TweetTableViewCell"
     
+    weak var delegate: TweetTableViewCellDelegate?
+    
     private let actionSpacing: CGFloat = 60
     
     private let avatarImageView: UIImageView = {
