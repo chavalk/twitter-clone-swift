@@ -48,12 +48,48 @@ class TweetTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let replyButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "bubble.left"), for: .normal)
+        button.tintColor = .systemGray2
+        return button
+    }()
+    
+    private let retweetButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "arrow.2.squarepath"), for: .normal)
+        button.tintColor = .systemGray2
+        return button
+    }()
+    
+    private let likeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.tintColor = .systemGray2
+        return button
+    }()
+    
+    private let shareButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        button.tintColor = .systemGray2
+        return button
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(avatarImageView)
         contentView.addSubview(displayNameLabel)
         contentView.addSubview(usernameLabel)
         contentView.addSubview(tweetTextContentLabel)
+        contentView.addSubview(replyButton)
+        contentView.addSubview(retweetButton)
+        contentView.addSubview(likeButton)
+        contentView.addSubview(shareButton)
         configureConstraints()
     }
     
