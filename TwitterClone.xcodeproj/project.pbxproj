@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3332F72947F7C9008A1B18 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */; };
 		BEA859E92945AE7D00A96A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859E82945AE7D00A96A37 /* AppDelegate.swift */; };
 		BEA859EB2945AE7D00A96A37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859EA2945AE7D00A96A37 /* SceneDelegate.swift */; };
 		BEA859ED2945AE7D00A96A37 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859EC2945AE7D00A96A37 /* MainTabBarViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BEA859E52945AE7D00A96A37 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA859E82945AE7D00A96A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA859EA2945AE7D00A96A37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE3332F52947F77F008A1B18 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		BEA859DC2945AE7D00A96A37 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		BEA859FC2945B6A700A96A37 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE3332F52947F77F008A1B18 /* General */,
 				BEA859FD2945B6B900A96A37 /* Core */,
 			);
 			path = Controllers;
@@ -179,6 +190,7 @@
 				BEA85A032945BAA600A96A37 /* NotificationsViewController.swift in Sources */,
 				BEA859EB2945AE7D00A96A37 /* SceneDelegate.swift in Sources */,
 				BEA859FF2945BA6A00A96A37 /* HomeViewController.swift in Sources */,
+				BE3332F72947F7C9008A1B18 /* ProfileViewController.swift in Sources */,
 				BEA85A052945BAC100A96A37 /* DirectMessagesViewController.swift in Sources */,
 				BEEA74B02946C1B000E27872 /* TweetTableViewCell.swift in Sources */,
 			);

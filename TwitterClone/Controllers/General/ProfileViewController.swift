@@ -1,0 +1,17 @@
+//
+//  ProfileViewController.swift
+//  TwitterClone
+//
+//  Created by Jose Garcia on 12/12/22.
+//
+
+import UIKit
+
+class ProfileViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        navigationItem.title = "Profile"
+    }
+}
