@@ -23,6 +23,18 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileTableView)
         profileTableView.delegate = self
         profileTableView.dataSource = self
+        configureConstraints()
+    }
+    
+    private func configureConstraints() {
+        let profileTavleViewConstraints = [
+            profileTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            profileTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            profileTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            profileTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ]
+        
+        NSLayoutConstraint.activate(profileTavleViewConstraints)
     }
 }
 
