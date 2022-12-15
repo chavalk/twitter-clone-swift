@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
         profileTableView.delegate = self
         profileTableView.dataSource = self
         profileTableView.tableHeaderView = headerView
+        navigationController?.navigationBar.isHidden = true
         configureConstraints()
     }
     
