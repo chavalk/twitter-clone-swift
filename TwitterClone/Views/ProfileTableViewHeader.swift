@@ -29,6 +29,13 @@ class ProfileTableViewHeader: UIView {
         }
     }
     
+    private let indicator: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        return view
+    }()
+    
     private var selectedTab: Int = 0 {
         didSet {
             for i in 0..<tabs.count {
@@ -174,6 +181,7 @@ class ProfileTableViewHeader: UIView {
         addSubview(followersCountLabel)
         addSubview(followersTextLabel)
         addSubview(sectionStack)
+        addSubview(indicator)
         configureConstraints()
         configureStackButton()
     }
