@@ -143,6 +143,18 @@ class ProfileTableViewHeader: UIView {
         addSubview(followersTextLabel)
         addSubview(sectionStack)
         configureConstraints()
+        configureStackButton()
+    }
+    
+    private func configureStackButton() {
+        for (_, button) in sectionStack.arrangedSubviews.enumerated() {
+            guard let button = button as? UIButton else { return }
+            button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
+        }
+    }
+    
+    @objc private func didTapTab(_ sender: UIButton) {
+        print(sender.titleLabel?.text ?? "")
     }
     
     required init?(coder: NSCoder) {
