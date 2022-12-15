@@ -29,6 +29,12 @@ class ProfileTableViewHeader: UIView {
         }
     }
     
+    private var selectedTab: Int = 0 {
+        didSet {
+            print(selectedTab)
+        }
+    }
+    
     private var tabs: [UIButton] = ["Tweets", "Tweets & Replies", "Media", "Likes"]
         .map { buttonTitle in
             let button = UIButton(type: .system)
@@ -174,7 +180,19 @@ class ProfileTableViewHeader: UIView {
     }
     
     @objc private func didTapTab(_ sender: UIButton) {
-        print(sender.titleLabel?.text ?? "")
+        guard let label = sender.titleLabel?.text else { return }
+        switch label {
+        case SectionTabs.tweets.rawValue:
+            selectedTab = 0
+        case SectionTabs.tweetsAndReplies.rawValue:
+            selectedTab = 1
+        case SectionTabs.media.rawValue:
+            selectedTab = 2
+        case SectionTabs.likes.rawValue:
+            selectedTab = 3
+        default:
+            selectedTab = 0
+        }
     }
     
     required init?(coder: NSCoder) {
