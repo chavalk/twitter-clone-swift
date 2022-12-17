@@ -27,9 +27,22 @@ class RegisterViewController: UIViewController {
         return textField
     }()
     
+    private let passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "Password",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        textField.isSecureTextEntry = true
+        return textField
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(registerTitleLabel)
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
     }
 }
