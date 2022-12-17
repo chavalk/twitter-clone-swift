@@ -52,5 +52,13 @@ class RegisterViewController: UIViewController {
             registerTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             registerTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
         ]
+        
+        let emailTextFieldConstraints = [
+            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            emailTextField.topAnchor.constraint(equalTo: registerTitleLabel.bottomAnchor, constant: 20),
+            emailTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 40),
+            emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emailTextField.heightAnchor.constraint(equalToConstant: 60)
+        ]
     }
 }
