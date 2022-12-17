@@ -20,10 +20,23 @@ class OnboardingViewController: UIViewController {
         return label
     }()
     
+    private let createAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Create account", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .bold)
+        button.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        button.layer.masksToBounds = true
+        button.tintColor = .white
+        button.layer.cornerRadius = 30
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(welcomeLabel)
+        view.addSubview(createAccountButton)
         
         configureConstraints()
     }
@@ -35,6 +48,14 @@ class OnboardingViewController: UIViewController {
             welcomeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ]
         
+        let createAccountButtonConstraints = [
+            createAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            createAccountButton.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 20),
+            createAccountButton.widthAnchor.constraint(equalTo: welcomeLabel.widthAnchor, constant: -20),
+            createAccountButton.heightAnchor.constraint(equalToConstant: 60)
+        ]
+        
         NSLayoutConstraint.activate(welcomeLabelConstraints)
+        NSLayoutConstraint.activate(createAccountButtonConstraints)
     }
 }
