@@ -19,6 +19,7 @@
 		BE1984B0294CF5AA0050D866 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BE1984AF294CF5AA0050D866 /* FirebaseStorageCombine-Community */; };
 		BE1984B3294D8D530050D866 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1984B2294D8D530050D866 /* OnboardingViewController.swift */; };
 		BE3332F72947F7C9008A1B18 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */; };
+		BE6E130D294E3E7B00821F9B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E130C294E3E7B00821F9B /* RegisterViewController.swift */; };
 		BE8427A7294A899E003B1EE2 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8427A6294A899E003B1EE2 /* ProfileTableViewHeader.swift */; };
 		BEA859E92945AE7D00A96A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859E82945AE7D00A96A37 /* AppDelegate.swift */; };
 		BEA859EB2945AE7D00A96A37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859EA2945AE7D00A96A37 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		BE19849C294CEEBD0050D866 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE1984B2294D8D530050D866 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BE6E130C294E3E7B00821F9B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BE8427A6294A899E003B1EE2 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 		BEA859E52945AE7D00A96A37 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA859E82945AE7D00A96A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				BE1984B2294D8D530050D866 /* OnboardingViewController.swift */,
+				BE6E130C294E3E7B00821F9B /* RegisterViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				BEA85A012945BA8600A96A37 /* SearchViewController.swift in Sources */,
 				BEA859ED2945AE7D00A96A37 /* MainTabBarViewController.swift in Sources */,
 				BEA859E92945AE7D00A96A37 /* AppDelegate.swift in Sources */,
+				BE6E130D294E3E7B00821F9B /* RegisterViewController.swift in Sources */,
 				BEA85A032945BAA600A96A37 /* NotificationsViewController.swift in Sources */,
 				BEA859EB2945AE7D00A96A37 /* SceneDelegate.swift in Sources */,
 				BEA859FF2945BA6A00A96A37 /* HomeViewController.swift in Sources */,
