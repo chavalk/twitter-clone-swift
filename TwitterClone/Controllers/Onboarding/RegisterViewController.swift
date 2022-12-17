@@ -20,6 +20,7 @@ class RegisterViewController: UIViewController {
     private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(
             string: "Email",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
@@ -38,12 +39,25 @@ class RegisterViewController: UIViewController {
         return textField
     }()
     
+    private let registerButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Create account", for: .normal)
+        button.tintColor = .white
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        button.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 25
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(registerTitleLabel)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
+        view.addSubview(registerButton)
         configureConstraints()
     }
     
@@ -69,8 +83,16 @@ class RegisterViewController: UIViewController {
             passwordTextField.heightAnchor.constraint(equalToConstant: 60)
         ]
         
+        let registerButtonConstraints = [
+            registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            registerButton.widthAnchor.constraint(equalToConstant: 180),
+            registerButton.heightAnchor.constraint(equalToConstant: 50)
+        ]
+        
         NSLayoutConstraint.activate(registerLabelConstraints)
         NSLayoutConstraint.activate(emailTextFieldConstraints)
         NSLayoutConstraint.activate(passwordTextFieldConstraints)
+        NSLayoutConstraint.activate(registerButtonConstraints)
     }
 }
