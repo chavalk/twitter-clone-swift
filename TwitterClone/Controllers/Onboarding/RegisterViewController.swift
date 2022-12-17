@@ -44,5 +44,13 @@ class RegisterViewController: UIViewController {
         view.addSubview(registerTitleLabel)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
+        configureConstraints()
+    }
+    
+    private func configureConstraints() {
+        let registerLabelConstraints = [
+            registerTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            registerTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+        ]
     }
 }
