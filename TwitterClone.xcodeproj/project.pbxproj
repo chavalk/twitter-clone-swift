@@ -17,6 +17,7 @@
 		BE1984AC294CF5AA0050D866 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BE1984AB294CF5AA0050D866 /* FirebaseFirestoreSwift */; };
 		BE1984AE294CF5AA0050D866 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BE1984AD294CF5AA0050D866 /* FirebaseStorage */; };
 		BE1984B0294CF5AA0050D866 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BE1984AF294CF5AA0050D866 /* FirebaseStorageCombine-Community */; };
+		BE1984B3294D8D530050D866 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1984B2294D8D530050D866 /* OnboardingViewController.swift */; };
 		BE3332F72947F7C9008A1B18 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */; };
 		BE8427A7294A899E003B1EE2 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8427A6294A899E003B1EE2 /* ProfileTableViewHeader.swift */; };
 		BEA859E92945AE7D00A96A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859E82945AE7D00A96A37 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		BE19849C294CEEBD0050D866 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE1984B2294D8D530050D866 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BE8427A6294A899E003B1EE2 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 		BEA859E52945AE7D00A96A37 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE1984B1294D8BF00050D866 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BE1984B2294D8D530050D866 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		BE3332F52947F77F008A1B18 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		BEA859FC2945B6A700A96A37 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE1984B1294D8BF00050D866 /* Onboarding */,
 				BE3332F52947F77F008A1B18 /* General */,
 				BEA859FD2945B6B900A96A37 /* Core */,
 			);
@@ -232,6 +243,7 @@
 				BE3332F72947F7C9008A1B18 /* ProfileViewController.swift in Sources */,
 				BEA85A052945BAC100A96A37 /* DirectMessagesViewController.swift in Sources */,
 				BE8427A7294A899E003B1EE2 /* ProfileTableViewHeader.swift in Sources */,
+				BE1984B3294D8D530050D866 /* OnboardingViewController.swift in Sources */,
 				BEEA74B02946C1B000E27872 /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
