@@ -60,5 +60,17 @@ class RegisterViewController: UIViewController {
             emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             emailTextField.heightAnchor.constraint(equalToConstant: 60)
         ]
+        
+        let passwordTextFieldConstraints = [
+            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 15),
+            passwordTextField.widthAnchor.constraint(equalToConstant: view.frame.width - 40),
+            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 60)
+        ]
+        
+        NSLayoutConstraint.activate(registerLabelConstraints)
+        NSLayoutConstraint.activate(emailTextFieldConstraints)
+        NSLayoutConstraint.activate(passwordTextFieldConstraints)
     }
 }
