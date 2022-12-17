@@ -36,8 +36,18 @@ class OnboardingViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.tintColor = .gray
+        label.text = "Have an account already?"
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
+    }()
+    
+    private let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Login", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 14)
+        button.tintColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        return button
     }()
     
     override func viewDidLoad() {
@@ -46,6 +56,7 @@ class OnboardingViewController: UIViewController {
         view.addSubview(welcomeLabel)
         view.addSubview(createAccountButton)
         view.addSubview(promptLabel)
+        view.addSubview(loginButton)
         
         configureConstraints()
     }
@@ -69,8 +80,14 @@ class OnboardingViewController: UIViewController {
             promptLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60)
         ]
         
+        let loginButtonConstraints = [
+            loginButton.centerYAnchor.constraint(equalTo: promptLabel.centerYAnchor),
+            loginButton.leadingAnchor.constraint(equalTo: promptLabel.trailingAnchor, constant: 10)
+        ]
+        
         NSLayoutConstraint.activate(welcomeLabelConstraints)
         NSLayoutConstraint.activate(createAccountButtonConstraints)
         NSLayoutConstraint.activate(promptLabelConstraints)
+        NSLayoutConstraint.activate(loginButtonConstraints)
     }
 }
