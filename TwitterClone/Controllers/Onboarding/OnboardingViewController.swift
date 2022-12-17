@@ -32,11 +32,20 @@ class OnboardingViewController: UIViewController {
         return button
     }()
     
+    private let promptLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.tintColor = .gray
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(welcomeLabel)
         view.addSubview(createAccountButton)
+        view.addSubview(promptLabel)
         
         configureConstraints()
     }
@@ -55,7 +64,13 @@ class OnboardingViewController: UIViewController {
             createAccountButton.heightAnchor.constraint(equalToConstant: 60)
         ]
         
+        let promptLabelConstraints = [
+            promptLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            promptLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60)
+        ]
+        
         NSLayoutConstraint.activate(welcomeLabelConstraints)
         NSLayoutConstraint.activate(createAccountButtonConstraints)
+        NSLayoutConstraint.activate(promptLabelConstraints)
     }
 }
