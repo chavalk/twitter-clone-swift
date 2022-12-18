@@ -88,6 +88,7 @@ class RegisterViewController: UIViewController {
         view.addSubview(registerButton)
         configureConstraints()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
+        bindViews()
     }
     
     private func configureConstraints() {
