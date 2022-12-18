@@ -50,6 +50,7 @@ class RegisterViewController: UIViewController {
         button.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 25
+        button.isEnabled = false
         return button
     }()
     
@@ -68,6 +69,10 @@ class RegisterViewController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(didChangePasswordField), for: .editingChanged)
     }
     
+    @objc private func didTapToDismiss() {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -76,6 +81,7 @@ class RegisterViewController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(registerButton)
         configureConstraints()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
     }
     
     private func configureConstraints() {
