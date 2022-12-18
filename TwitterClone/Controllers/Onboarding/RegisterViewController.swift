@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    private var viewModel = RegisterViewViewModel()
+    
     private let registerTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +52,21 @@ class RegisterViewController: UIViewController {
         button.layer.cornerRadius = 25
         return button
     }()
+    
+    @objc private func didChangeEmailField() {
+        viewModel.email = emailTextField.text
+        viewModel.validateRegistrationForm()
+    }
+    
+    @objc private func didChangePasswordField() {
+        viewModel.password = passwordTextField.text
+        viewModel.validateRegistrationForm()
+    }
+    
+    private func bindViews() {
+        emailTextField.addTarget(self, action: #selector(didChangeEmailField), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(didChangePasswordField), for: .editingChanged)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
