@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class RegisterViewController: UIViewController {
     
     private var viewModel = RegisterViewViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
     
     private let registerTitleLabel: UILabel = {
         let label = UILabel()
@@ -70,6 +72,7 @@ class RegisterViewController: UIViewController {
         viewModel.$isRegistrationFormValid.sink { [weak self] validationState in
             self?.registerButton.isEnabled = validationState
         }
+        .store(in: &subscriptions)
     }
     
     @objc private func didTapToDismiss() {
