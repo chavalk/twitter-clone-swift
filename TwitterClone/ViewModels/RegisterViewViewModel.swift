@@ -14,7 +14,12 @@ final class RegisterViewViewModel: ObservableObject {
     @Published var isRegistrationFormValid: Bool = false
     
     func validateRegistrationForm() {
-        
+        guard let email = email,
+              let password = password else {
+            isRegistrationFormValid = false
+            return
+        }
+        isRegistrationFormValid = isValidEmail(email) && password.count >= 8
     }
     
     func isValidEmail(_ email: String) -> Bool {
