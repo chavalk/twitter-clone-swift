@@ -92,9 +92,14 @@ class RegisterViewController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(registerButton)
+        registerButton.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
         configureConstraints()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
         bindViews()
+    }
+    
+    @objc private func didTapRegister() {
+        viewModel.createUser()
     }
     
     private func configureConstraints() {
