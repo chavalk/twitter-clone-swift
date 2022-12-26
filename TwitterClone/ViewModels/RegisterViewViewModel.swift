@@ -34,7 +34,9 @@ final class RegisterViewViewModel: ObservableObject {
         return emailPred.evaluate(with: email)
     }
     
-    func createUser(with email: String, password: String) {
+    func createUser() {
+        guard let email = email,
+              let password = password else { return }
         AuthManager.shared.registerUser(with: email, password: password)
             .sink { _ in
                 
