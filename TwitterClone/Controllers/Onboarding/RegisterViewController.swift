@@ -58,18 +58,18 @@ class RegisterViewController: UIViewController {
     
     @objc private func didChangeEmailField() {
         viewModel.email = emailTextField.text
-        viewModel.validateRegistrationForm()
+        viewModel.validateAuthenticationForm()
     }
     
     @objc private func didChangePasswordField() {
         viewModel.password = passwordTextField.text
-        viewModel.validateRegistrationForm()
+        viewModel.validateAuthenticationForm()
     }
     
     private func bindViews() {
         emailTextField.addTarget(self, action: #selector(didChangeEmailField), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(didChangePasswordField), for: .editingChanged)
-        viewModel.$isRegistrationFormValid.sink { [weak self] validationState in
+        viewModel.$isAuthenticationFormValid.sink { [weak self] validationState in
             self?.registerButton.isEnabled = validationState
         }
         .store(in: &subscriptions)
