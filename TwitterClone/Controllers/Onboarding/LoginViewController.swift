@@ -89,8 +89,13 @@ class LoginViewController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
+        loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         configureConstraints()
         bindViews()
+    }
+    
+    @objc private func didTapLogin() {
+        viewModel.loginUser()
     }
     
     private func configureConstraints() {
