@@ -45,4 +45,16 @@ final class AuthenticationViewViewModel: ObservableObject {
             }
             .store(in: &subscriptions)
     }
+    
+    func loginUser() {
+        guard let email = email,
+              let password = password else { return }
+        AuthManager.shared.loginUser(with: email, password: password)
+            .sink { _ in
+                
+            } receiveValue: { [weak self] user in
+                self?.user = user
+            }
+            .store(in: &subscriptions)
+    }
 }
