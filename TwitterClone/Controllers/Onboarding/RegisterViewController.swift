@@ -10,7 +10,7 @@ import Combine
 
 class RegisterViewController: UIViewController {
     
-    private var viewModel = RegisterViewViewModel()
+    private var viewModel = AuthenticationViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
     
     private let registerTitleLabel: UILabel = {
