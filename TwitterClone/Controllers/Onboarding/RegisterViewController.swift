@@ -80,7 +80,6 @@ class RegisterViewController: UIViewController {
             vc.dismiss(animated: true)
         }
         .store(in: &subscriptions)
-
     }
     
     @objc private func didTapToDismiss() {
