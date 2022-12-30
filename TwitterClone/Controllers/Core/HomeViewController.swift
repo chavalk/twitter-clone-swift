@@ -7,10 +7,12 @@
 
 import UIKit
 import FirebaseAuth
+import Combine
 
 class HomeViewController: UIViewController {
 
     private var viewModel = HomeViewViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
     
     private func configureNavigationBar() {
         let size: CGFloat = 36
@@ -73,7 +75,8 @@ class HomeViewController: UIViewController {
     }
     
     func completeUserOnboarding() {
-        
+        let vc = ProfileDataFormViewController()
+        present(vc, animated: true)
     }
     
     func bindViews() {
@@ -83,6 +86,7 @@ class HomeViewController: UIViewController {
                 self?.completeUserOnboarding()
             }
         }
+        .store(in: &subscriptions)
     }
 }
 
