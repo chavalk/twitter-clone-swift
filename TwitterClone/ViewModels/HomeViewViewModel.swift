@@ -14,6 +14,8 @@ final class HomeViewViewModel: ObservableObject {
     @Published var user: TwitterUser?
     @Published var error: String?
     
+    private var subscriptions: Set<AnyCancellable> = []
+    
     func retreiveUser() {
         guard let id = Auth.auth().currentUser?.uid else { return }
         DatabaseManager.shared.collectionUsers(retrieve: id)
@@ -24,6 +26,6 @@ final class HomeViewViewModel: ObservableObject {
             } receiveValue: { [weak self] user in
                 self?.user = user
             }
-
+            .store(in: &subscriptions)
     }
 }
