@@ -70,6 +70,7 @@ class ProfileDataFormViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(scrollView)
         scrollView.addSubview(hintLabel)
+        scrollView.addSubview(avatarPlaceholderImageView)
         isModalInPresentation = true
         configureConstraints()
     }
@@ -87,7 +88,15 @@ class ProfileDataFormViewController: UIViewController {
             hintLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30)
         ]
         
+        let avatarPlaceholderImageViewConstraints = [
+            avatarPlaceholderImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            avatarPlaceholderImageView.heightAnchor.constraint(equalToConstant: 120),
+            avatarPlaceholderImageView.widthAnchor.constraint(equalToConstant: 120),
+            avatarPlaceholderImageView.topAnchor.constraint(equalTo: hintLabel.bottomAnchor, constant: 30)
+        ]
+        
         NSLayoutConstraint.activate(scrollViewConstraints)
         NSLayoutConstraint.activate(hintLabelConstraints)
+        NSLayoutConstraint.activate(avatarPlaceholderImageViewConstraints)
     }
 }
