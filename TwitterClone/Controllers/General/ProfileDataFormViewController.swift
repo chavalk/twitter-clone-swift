@@ -17,10 +17,20 @@ class ProfileDataFormViewController: UIViewController {
         return scrollView
     }()
     
+    private let hintLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Fill in your data"
+        label.font = .systemFont(ofSize: 32, weight: .bold)
+        label.textColor = .label
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(scrollView)
+        scrollView.addSubview(hintLabel)
         configureConstraints()
     }
     
@@ -32,6 +42,12 @@ class ProfileDataFormViewController: UIViewController {
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
         
+        let hintLabelConstraints = [
+            hintLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            hintLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30)
+        ]
+        
         NSLayoutConstraint.activate(scrollViewConstraints)
+        NSLayoutConstraint.activate(hintLabelConstraints)
     }
 }
