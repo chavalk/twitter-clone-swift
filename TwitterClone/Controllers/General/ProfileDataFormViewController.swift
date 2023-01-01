@@ -31,6 +31,7 @@ class ProfileDataFormViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(scrollView)
         scrollView.addSubview(hintLabel)
+        isModalInPresentation = true
         configureConstraints()
     }
     
