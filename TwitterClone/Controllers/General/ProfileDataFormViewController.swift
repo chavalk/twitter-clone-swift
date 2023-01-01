@@ -17,6 +17,32 @@ class ProfileDataFormViewController: UIViewController {
         return scrollView
     }()
     
+    private let displayNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.keyboardType = .default
+        textField.backgroundColor = .secondarySystemFill
+        textField.leftViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        textField.layer.masksToBounds = true
+        textField.layer.cornerRadius = 8
+        textField.attributedText = NSAttributedString(string: "Display Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        return textField
+    }()
+    
+    private let usernameTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.keyboardType = .default
+        textField.backgroundColor = .secondarySystemFill
+        textField.leftViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        textField.layer.masksToBounds = true
+        textField.layer.cornerRadius = 8
+        textField.attributedText = NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        return textField
+    }()
+    
     private let hintLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
