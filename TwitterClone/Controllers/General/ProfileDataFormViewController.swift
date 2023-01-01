@@ -52,6 +52,19 @@ class ProfileDataFormViewController: UIViewController {
         return label
     }()
     
+    private let avatarPlaceholderImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 60
+        imageView.backgroundColor = .lightGray
+        imageView.image = UIImage(systemName: "camera.fill")
+        imageView.tintColor = .gray
+        imageView.isUserInteractionEnabled = true
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
