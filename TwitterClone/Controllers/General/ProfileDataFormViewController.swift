@@ -79,6 +79,19 @@ class ProfileDataFormViewController: UIViewController {
         return textView
     }()
     
+    private let submitButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Submit", for: .normal)
+        button.tintColor = .white
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        button.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 25
+        button.isEnabled = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -88,6 +101,7 @@ class ProfileDataFormViewController: UIViewController {
         scrollView.addSubview(displayNameTextField)
         scrollView.addSubview(usernameTextField)
         scrollView.addSubview(bioTextView)
+        scrollView.addSubview(submitButton)
         isModalInPresentation = true
         bioTextView.delegate = self
         configureConstraints()
@@ -134,12 +148,20 @@ class ProfileDataFormViewController: UIViewController {
             bioTextView.heightAnchor.constraint(equalToConstant: 150)
         ]
         
+        let submitButtonConstraints = [
+            submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            submitButton.heightAnchor.constraint(equalToConstant: 50),
+            submitButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -20)
+        ]
+        
         NSLayoutConstraint.activate(scrollViewConstraints)
         NSLayoutConstraint.activate(hintLabelConstraints)
         NSLayoutConstraint.activate(avatarPlaceholderImageViewConstraints)
         NSLayoutConstraint.activate(displayNameTextFieldConstraints)
         NSLayoutConstraint.activate(usernameTextFieldConstraints)
         NSLayoutConstraint.activate(bioTextViewConstraints)
+        NSLayoutConstraint.activate(submitButtonConstraints)
     }
 }
 
