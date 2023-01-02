@@ -66,6 +66,19 @@ class ProfileDataFormViewController: UIViewController {
         return imageView
     }()
     
+    private let bioTextView: UITextView = {
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .secondarySystemFill
+        textView.layer.masksToBounds = true
+        textView.layer.cornerRadius = 8
+        textView.textContainerInset = .init(top: 15, left: 15, bottom: 15, right: 15)
+        textView.text = "Tell the world about yourself"
+        textView.textColor = .gray
+        textView.font = .systemFont(ofSize: 16)
+        return textView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -74,6 +87,7 @@ class ProfileDataFormViewController: UIViewController {
         scrollView.addSubview(avatarPlaceholderImageView)
         scrollView.addSubview(displayNameTextField)
         scrollView.addSubview(usernameTextField)
+        scrollView.addSubview(bioTextView)
         isModalInPresentation = true
         configureConstraints()
     }
@@ -112,10 +126,18 @@ class ProfileDataFormViewController: UIViewController {
             usernameTextField.heightAnchor.constraint(equalToConstant: 50)
         ]
         
+        let bioTextViewConstraints = [
+            bioTextView.leadingAnchor.constraint(equalTo: displayNameTextField.leadingAnchor),
+            bioTextView.trailingAnchor.constraint(equalTo: displayNameTextField.trailingAnchor),
+            bioTextView.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 20),
+            bioTextView.heightAnchor.constraint(equalToConstant: 150)
+        ]
+        
         NSLayoutConstraint.activate(scrollViewConstraints)
         NSLayoutConstraint.activate(hintLabelConstraints)
         NSLayoutConstraint.activate(avatarPlaceholderImageViewConstraints)
         NSLayoutConstraint.activate(displayNameTextFieldConstraints)
         NSLayoutConstraint.activate(usernameTextFieldConstraints)
+        NSLayoutConstraint.activate(bioTextViewConstraints)
     }
 }
