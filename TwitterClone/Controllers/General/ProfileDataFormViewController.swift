@@ -106,9 +106,14 @@ class ProfileDataFormViewController: UIViewController {
         displayNameTextField.delegate = self
         usernameTextField.delegate = self
         bioTextView.delegate = self
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
         configureConstraints()
     }
     
+    @objc private func didTapToDismiss() {
+        view.endEditing(true)
+    }
+                                  
     private func configureConstraints() {
         let scrollViewConstraints = [
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
