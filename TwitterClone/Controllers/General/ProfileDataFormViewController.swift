@@ -89,6 +89,7 @@ class ProfileDataFormViewController: UIViewController {
         scrollView.addSubview(usernameTextField)
         scrollView.addSubview(bioTextView)
         isModalInPresentation = true
+        bioTextView.delegate = self
         configureConstraints()
     }
     
@@ -139,5 +140,21 @@ class ProfileDataFormViewController: UIViewController {
         NSLayoutConstraint.activate(displayNameTextFieldConstraints)
         NSLayoutConstraint.activate(usernameTextFieldConstraints)
         NSLayoutConstraint.activate(bioTextViewConstraints)
+    }
+}
+
+extension ProfileDataFormViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .gray {
+            textView.textColor = .label
+            textView.text = ""
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Tell the world about yourself"
+            textView.textColor = .gray
+        }
     }
 }
