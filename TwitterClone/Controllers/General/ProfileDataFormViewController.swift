@@ -72,6 +72,8 @@ class ProfileDataFormViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(hintLabel)
         scrollView.addSubview(avatarPlaceholderImageView)
+        scrollView.addSubview(displayNameTextField)
+        scrollView.addSubview(usernameTextField)
         isModalInPresentation = true
         configureConstraints()
     }
@@ -96,8 +98,24 @@ class ProfileDataFormViewController: UIViewController {
             avatarPlaceholderImageView.topAnchor.constraint(equalTo: hintLabel.bottomAnchor, constant: 30)
         ]
         
+        let displayNameTextFieldConstraints = [
+            displayNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            displayNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            displayNameTextField.topAnchor.constraint(equalTo: avatarPlaceholderImageView.bottomAnchor, constant: 40),
+            displayNameTextField.heightAnchor.constraint(equalToConstant: 50)
+        ]
+        
+        let usernameTextFieldConstraints = [
+            usernameTextField.leadingAnchor.constraint(equalTo: displayNameTextField.leadingAnchor),
+            usernameTextField.trailingAnchor.constraint(equalTo: displayNameTextField.trailingAnchor),
+            usernameTextField.topAnchor.constraint(equalTo: displayNameTextField.bottomAnchor, constant: 20),
+            usernameTextField.heightAnchor.constraint(equalToConstant: 50)
+        ]
+        
         NSLayoutConstraint.activate(scrollViewConstraints)
         NSLayoutConstraint.activate(hintLabelConstraints)
         NSLayoutConstraint.activate(avatarPlaceholderImageViewConstraints)
+        NSLayoutConstraint.activate(displayNameTextFieldConstraints)
+        NSLayoutConstraint.activate(usernameTextFieldConstraints)
     }
 }
