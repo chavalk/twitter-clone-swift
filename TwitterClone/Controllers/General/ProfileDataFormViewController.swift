@@ -103,6 +103,8 @@ class ProfileDataFormViewController: UIViewController {
         scrollView.addSubview(bioTextView)
         scrollView.addSubview(submitButton)
         isModalInPresentation = true
+        displayNameTextField.delegate = self
+        usernameTextField.delegate = self
         bioTextView.delegate = self
         configureConstraints()
     }
@@ -165,7 +167,7 @@ class ProfileDataFormViewController: UIViewController {
     }
 }
 
-extension ProfileDataFormViewController: UITextViewDelegate {
+extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .gray {
             textView.textColor = .label
@@ -178,5 +180,13 @@ extension ProfileDataFormViewController: UITextViewDelegate {
             textView.text = "Tell the world about yourself"
             textView.textColor = .gray
         }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: textField.frame.origin.y - 100), animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
     }
 }
