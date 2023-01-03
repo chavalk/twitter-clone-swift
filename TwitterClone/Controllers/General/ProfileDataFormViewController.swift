@@ -231,6 +231,7 @@ extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate
     
     func textViewDidChange(_ textView: UITextView) {
         viewModel.bio = textView.text
+        viewModel.validateUserProfileForm()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
