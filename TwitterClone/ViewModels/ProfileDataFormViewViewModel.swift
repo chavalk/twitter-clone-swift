@@ -20,6 +20,7 @@ final class ProfileDataFormViewViewModel: ObservableObject {
     @Published var imageData: UIImage?
     @Published var isFormValid: Bool = false
     @Published var error: String = ""
+    @Published var isOnboardingFinished: Bool = false
     
     func validateUserProfileForm() {
         guard let displayName = displayName,
@@ -66,6 +67,26 @@ final class ProfileDataFormViewViewModel: ObservableObject {
         guard let displayName,
               let username,
               let bio,
-              let avatarPath else { return }
+              let avatarPath,
+              let id = Auth.auth().currentUser?.uid else { return }
+        
+        let updateFields: [String: Any] = [
+            "displayName": displayName,
+            "username": username,
+            "bio": bio,
+            "avatarPath": avatarPath,
+            "isUserOnboarded": true
+        ]
+        
+        DatabaseManager.shared.collectionUsers(updateFields: updateFields, for: id)
+            .sink { [weak self] completion in
+                if case .failure(let error) = completion {
+                    print(error.localizedDescription)
+                    self?.error = error.localizedDescription
+                }
+            } receiveValue: { [weak self] onboardingState in
+                self?.isOnboardingFinished = onboardingState
+            }
+            .store(in: &subscriptions)
     }
 }
