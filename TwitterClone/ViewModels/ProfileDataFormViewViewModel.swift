@@ -47,13 +47,25 @@ final class ProfileDataFormViewViewModel: ObservableObject {
                 StorageManager.shared.getDownloadURL(for: metaData.path)
             })
             .sink { [weak self] completion in
-                if case .failure(let error) = completion {
+                switch completion {
+                case .failure(let error):
+                    print(error.localizedDescription)
                     self?.error = error.localizedDescription
+                    
+                case .finished:
+                    self?.updateUserData()
                 }
             } receiveValue: { [weak self] url in
                 self?.avatarPath = url.absoluteString
             }
             .store(in: &subscriptions)
 
+    }
+    
+    private func updateUserData() {
+        guard let displayName,
+              let username,
+              let bio,
+              let avatarPath else { return }
     }
 }
