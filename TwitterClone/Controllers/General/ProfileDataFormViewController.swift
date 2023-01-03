@@ -10,6 +10,8 @@ import PhotosUI
 
 class ProfileDataFormViewController: UIViewController {
 
+    private var viewModel = ProfileDataFormViewViewModel()
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -110,6 +112,20 @@ class ProfileDataFormViewController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
         configureConstraints()
         avatarPlaceholderImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToUpload)))
+        bindViews()
+    }
+    
+    @objc private func didUpdateDisplayName() {
+        viewModel.displayName = displayNameTextField.text
+    }
+    
+    @objc private func didUpdateUsername() {
+        viewModel.username = usernameTextField.text
+    }
+    
+    private func bindViews() {
+        displayNameTextField.addTarget(self, action: #selector(didUpdateDisplayName), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(didUpdateUsername), for: .editingChanged)
     }
     
     @objc private func didTapToUpload() {
