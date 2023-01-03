@@ -12,12 +12,14 @@ import FirebaseAuth
 import FirebaseStorage
 
 final class ProfileDataFormViewViewModel: ObservableObject {
+    private var subscriptions: Set<AnyCancellable> = []
     @Published var displayName: String?
     @Published var username: String?
     @Published var bio: String?
     @Published var avatarPath: String?
     @Published var imageData: UIImage?
     @Published var isFormValid: Bool = false
+    @Published var url: URL?
     @Published var error: String = ""
     
     func validateUserProfileForm() {
@@ -42,13 +44,17 @@ final class ProfileDataFormViewViewModel: ObservableObject {
         metaData.contentType = "image/jpeg"
         
         StorageManager.shared.uploadProfilePhoto(with: randomID, image: imageData, metaData: metaData)
+            .flatMap({ metaData in
+                StorageManager.shared.getDownloadURL(for: metaData.path)
+            })
             .sink { [weak self] completion in
                 if case .failure(let error) = completion {
                     self?.error = error.localizedDescription
                 }
-            } receiveValue: { metaData in
-                metaData.path
+            } receiveValue: { [weak self] url in
+                self?.url = url
             }
+            .store(in: &subscriptions)
 
     }
 }
