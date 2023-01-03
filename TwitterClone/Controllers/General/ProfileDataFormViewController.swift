@@ -216,6 +216,10 @@ extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate
         }
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        viewModel.bio = textView.text
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         scrollView.setContentOffset(CGPoint(x: 0, y: textField.frame.origin.y - 100), animated: true)
     }
