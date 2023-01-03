@@ -7,10 +7,14 @@
 
 import Foundation
 import Combine
+import UIKit
+import FirebaseAuth
+import FirebaseStorage
 
 final class ProfileDataFormViewViewModel: ObservableObject {
     @Published var displayName: String?
     @Published var username: String?
     @Published var bio: String?
     @Published var avatarPath: String?
+    @Published var imageData: UIImage?
 }
