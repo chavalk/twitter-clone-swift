@@ -18,6 +18,7 @@ final class ProfileDataFormViewViewModel: ObservableObject {
     @Published var avatarPath: String?
     @Published var imageData: UIImage?
     @Published var isFormValid: Bool = false
+    @Published var error: String = ""
     
     func validateUserProfileForm() {
         guard let displayName = displayName,
@@ -31,5 +32,23 @@ final class ProfileDataFormViewViewModel: ObservableObject {
             return
         }
         isFormValid = true
+    }
+    
+    func uploadAvatar() {
+        
+        let randomID = UUID().uuidString
+        guard let imageData = imageData?.jpegData(compressionQuality: 0.5) else { return }
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        StorageManager.shared.uploadProfilePhoto(with: randomID, image: imageData, metaData: metaData)
+            .sink { [weak self] completion in
+                if case .failure(let error) = completion {
+                    self?.error = error.localizedDescription
+                }
+            } receiveValue: { metaData in
+                metaData.path
+            }
+
     }
 }
