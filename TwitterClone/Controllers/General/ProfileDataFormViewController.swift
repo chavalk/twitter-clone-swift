@@ -7,10 +7,12 @@
 
 import UIKit
 import PhotosUI
+import Combine
 
 class ProfileDataFormViewController: UIViewController {
 
     private var viewModel = ProfileDataFormViewViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -126,6 +128,10 @@ class ProfileDataFormViewController: UIViewController {
     private func bindViews() {
         displayNameTextField.addTarget(self, action: #selector(didUpdateDisplayName), for: .editingChanged)
         usernameTextField.addTarget(self, action: #selector(didUpdateUsername), for: .editingChanged)
+        viewModel.$isFormValid.sink { [weak self] buttonState in
+            self?.submitButton.isEnabled = buttonState
+        }
+        .store(in: &subscriptions)
     }
     
     @objc private func didTapToUpload() {
