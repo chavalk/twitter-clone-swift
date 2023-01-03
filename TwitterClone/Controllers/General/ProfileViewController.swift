@@ -47,6 +47,11 @@ class ProfileViewController: UIViewController {
         bindViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.retreiveUser()
+    }
+    
     private func bindViews() {
         viewModel.$user.sink { [weak self] user in
             guard let user = user else { return }
