@@ -10,6 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     private var isStatusBarHidden: Bool = true
+    private var viewModel = ProfileViewViewModel()
     
     private let statusBar: UIView = {
         let view = UIView()
@@ -40,6 +41,10 @@ class ProfileViewController: UIViewController {
         profileTableView.contentInsetAdjustmentBehavior = .never
         navigationController?.navigationBar.isHidden = true
         configureConstraints()
+    }
+    
+    private func bindViews() {
+        
     }
     
     private func configureConstraints() {
