@@ -119,10 +119,12 @@ class ProfileDataFormViewController: UIViewController {
     
     @objc private func didUpdateDisplayName() {
         viewModel.displayName = displayNameTextField.text
+        viewModel.validateUserProfileForm()
     }
     
     @objc private func didUpdateUsername() {
         viewModel.username = usernameTextField.text
+        viewModel.validateUserProfileForm()
     }
     
     private func bindViews() {
@@ -245,6 +247,7 @@ extension ProfileDataFormViewController: PHPickerViewControllerDelegate {
                     DispatchQueue.main.async {
                         self?.avatarPlaceholderImageView.image = image
                         self?.viewModel.imageData = image
+                        self?.viewModel.validateUserProfileForm()
                     }
                 }
             }
