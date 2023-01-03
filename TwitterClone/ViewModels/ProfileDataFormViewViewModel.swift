@@ -17,4 +17,19 @@ final class ProfileDataFormViewViewModel: ObservableObject {
     @Published var bio: String?
     @Published var avatarPath: String?
     @Published var imageData: UIImage?
+    @Published var isFormValid: Bool = false
+    
+    func validateUserProfileForm() {
+        guard let displayName = displayName,
+              displayName.count > 2,
+              let username = username,
+              username.count > 2,
+              let bio = bio,
+              bio.count > 2,
+              imageData != nil else {
+            isFormValid = false
+            return
+        }
+        isFormValid = true
+    }
 }
