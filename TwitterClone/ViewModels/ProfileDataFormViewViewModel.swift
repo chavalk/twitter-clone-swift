@@ -19,7 +19,6 @@ final class ProfileDataFormViewViewModel: ObservableObject {
     @Published var avatarPath: String?
     @Published var imageData: UIImage?
     @Published var isFormValid: Bool = false
-    @Published var url: URL?
     @Published var error: String = ""
     
     func validateUserProfileForm() {
@@ -52,7 +51,7 @@ final class ProfileDataFormViewViewModel: ObservableObject {
                     self?.error = error.localizedDescription
                 }
             } receiveValue: { [weak self] url in
-                self?.url = url
+                self?.avatarPath = url.absoluteString
             }
             .store(in: &subscriptions)
 
