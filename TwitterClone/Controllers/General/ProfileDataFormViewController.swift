@@ -211,7 +211,17 @@ extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate
 
 extension ProfileDataFormViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
         
+        for result in results {
+            result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
+                if let image = object as? UIImage {
+                    DispatchQueue.main.async {
+                        self?.avatarPlaceholderImageView.image = image
+                    }
+                }
+            }
+        }
     }
     
     
