@@ -63,7 +63,7 @@ class ProfileDataFormViewController: UIViewController {
         imageView.image = UIImage(systemName: "camera.fill")
         imageView.tintColor = .gray
         imageView.isUserInteractionEnabled = true
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
