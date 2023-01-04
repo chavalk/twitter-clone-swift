@@ -32,6 +32,7 @@
 		BE70170529641AB0006A1C3D /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE70170429641AB0006A1C3D /* ProfileViewViewModel.swift */; };
 		BE701708296423DB006A1C3D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = BE701707296423DB006A1C3D /* SDWebImage */; };
 		BE8427A7294A899E003B1EE2 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8427A6294A899E003B1EE2 /* ProfileTableViewHeader.swift */; };
+		BEA4FB36296546DC00D5B167 /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4FB35296546DC00D5B167 /* Extensions+UIColor.swift */; };
 		BEA859E92945AE7D00A96A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859E82945AE7D00A96A37 /* AppDelegate.swift */; };
 		BEA859EB2945AE7D00A96A37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859EA2945AE7D00A96A37 /* SceneDelegate.swift */; };
 		BEA859ED2945AE7D00A96A37 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859EC2945AE7D00A96A37 /* MainTabBarViewController.swift */; };
@@ -60,6 +61,7 @@
 		BE7017022963F29A006A1C3D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		BE70170429641AB0006A1C3D /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		BE8427A6294A899E003B1EE2 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
+		BEA4FB35296546DC00D5B167 /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
 		BEA859E52945AE7D00A96A37 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA859E82945AE7D00A96A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA859EA2945AE7D00A96A37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BEA4FB332965468400D5B167 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4FB342965469200D5B167 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BEA4FB342965469200D5B167 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4FB35296546DC00D5B167 /* Extensions+UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BEA859DC2945AE7D00A96A37 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +180,7 @@
 		BEA859E72945AE7D00A96A37 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				BEA4FB332965468400D5B167 /* Utils */,
 				BE7016F7295E5DC8006A1C3D /* Models */,
 				BE7016F22950F304006A1C3D /* Networking */,
 				BE6E130E294EE20B00821F9B /* ViewModels */,
@@ -311,6 +330,7 @@
 				BE701701295FA3BC006A1C3D /* ProfileDataFormViewViewModel.swift in Sources */,
 				BE3332F72947F7C9008A1B18 /* ProfileViewController.swift in Sources */,
 				BEA85A052945BAC100A96A37 /* DirectMessagesViewController.swift in Sources */,
+				BEA4FB36296546DC00D5B167 /* Extensions+UIColor.swift in Sources */,
 				BE8427A7294A899E003B1EE2 /* ProfileTableViewHeader.swift in Sources */,
 				BE7016FF295FA20C006A1C3D /* ProfileDataFormViewController.swift in Sources */,
 				BE1984B3294D8D530050D866 /* OnboardingViewController.swift in Sources */,
