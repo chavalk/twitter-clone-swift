@@ -20,13 +20,25 @@ class TweetComposeViewController: UIViewController {
         return button
     }()
     
+    private let tweetContentTextView: UITextView = {
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.layer.masksToBounds = true
+        textView.layer.cornerRadius = 8
+        textView.textContainerInset = .init(top: 15, left: 15, bottom: 15, right: 15)
+        textView.text = "What's happening?"
+        textView.textColor = .gray
+        textView.font = .systemFont(ofSize: 16)
+        return textView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Tweet"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(didTapToCancel))
         view.addSubview(tweetButton)
-        
+        view.addSubview(tweetContentTextView)
         configureConstraints()
     }
     
@@ -38,7 +50,15 @@ class TweetComposeViewController: UIViewController {
             tweetButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
+        let tweetTextViewConstraints = [
+            tweetContentTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tweetContentTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            tweetContentTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            tweetContentTextView.bottomAnchor.constraint(equalTo: tweetButton.topAnchor, constant: -10)
+        ]
+        
         NSLayoutConstraint.activate(tweetButtonConstraints)
+        NSLayoutConstraint.activate(tweetTextViewConstraints)
     }
     
     @objc private func didTapToCancel() {
