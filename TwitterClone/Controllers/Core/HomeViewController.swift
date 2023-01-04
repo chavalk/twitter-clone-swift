@@ -14,9 +14,9 @@ class HomeViewController: UIViewController {
     private var viewModel = HomeViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
     
-    private let composeTweetButton: UIButton = {
-        let button = UIButton(type: .system, primaryAction: UIAction { _ in
-            print("Tweet is being prepared")
+    private lazy var composeTweetButton: UIButton = {
+        let button = UIButton(type: .system, primaryAction: UIAction { [weak self] _ in
+            self?.navigateToTweetComposer()
         })
         
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -82,6 +82,12 @@ class HomeViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: false)
         }
+    }
+    
+    private func navigateToTweetComposer() {
+        let vc = UINavigationController(rootViewController: TweetComposeViewController())
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
