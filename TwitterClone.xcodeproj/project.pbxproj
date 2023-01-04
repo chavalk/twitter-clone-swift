@@ -33,6 +33,7 @@
 		BE701708296423DB006A1C3D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = BE701707296423DB006A1C3D /* SDWebImage */; };
 		BE8427A7294A899E003B1EE2 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8427A6294A899E003B1EE2 /* ProfileTableViewHeader.swift */; };
 		BEA4FB36296546DC00D5B167 /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4FB35296546DC00D5B167 /* Extensions+UIColor.swift */; };
+		BEA4FB382965542600D5B167 /* TweetComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4FB372965542600D5B167 /* TweetComposeViewController.swift */; };
 		BEA859E92945AE7D00A96A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859E82945AE7D00A96A37 /* AppDelegate.swift */; };
 		BEA859EB2945AE7D00A96A37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859EA2945AE7D00A96A37 /* SceneDelegate.swift */; };
 		BEA859ED2945AE7D00A96A37 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA859EC2945AE7D00A96A37 /* MainTabBarViewController.swift */; };
@@ -62,6 +63,7 @@
 		BE70170429641AB0006A1C3D /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		BE8427A6294A899E003B1EE2 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 		BEA4FB35296546DC00D5B167 /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
+		BEA4FB372965542600D5B167 /* TweetComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetComposeViewController.swift; sourceTree = "<group>"; };
 		BEA859E52945AE7D00A96A37 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA859E82945AE7D00A96A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA859EA2945AE7D00A96A37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */,
 				BE7016FE295FA20C006A1C3D /* ProfileDataFormViewController.swift */,
+				BEA4FB372965542600D5B167 /* TweetComposeViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				BEA85A012945BA8600A96A37 /* SearchViewController.swift in Sources */,
 				BE7016F42950F31C006A1C3D /* AuthManager.swift in Sources */,
+				BEA4FB382965542600D5B167 /* TweetComposeViewController.swift in Sources */,
 				BEA859ED2945AE7D00A96A37 /* MainTabBarViewController.swift in Sources */,
 				BE7017032963F29A006A1C3D /* StorageManager.swift in Sources */,
 				BE7016F6295DEC9C006A1C3D /* LoginViewController.swift in Sources */,
