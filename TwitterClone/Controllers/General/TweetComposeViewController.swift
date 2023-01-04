@@ -12,5 +12,11 @@ class TweetComposeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        title = "Tweet"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(didTapToCancel))
+    }
+    
+    @objc private func didTapToCancel() {
+        dismiss(animated: true)
     }
 }
