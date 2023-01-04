@@ -37,6 +37,7 @@ class TweetComposeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Tweet"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(didTapToCancel))
+        tweetContentTextView.delegate = self
         view.addSubview(tweetButton)
         view.addSubview(tweetContentTextView)
         configureConstraints()
@@ -63,5 +64,21 @@ class TweetComposeViewController: UIViewController {
     
     @objc private func didTapToCancel() {
         dismiss(animated: true)
+    }
+}
+
+extension TweetComposeViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .gray {
+            textView.textColor = .label
+            textView.text = ""
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "What's happening?"
+            textView.textColor = .gray
+        }
     }
 }
