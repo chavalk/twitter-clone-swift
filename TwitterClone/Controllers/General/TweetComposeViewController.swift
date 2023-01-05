@@ -18,6 +18,7 @@ class TweetComposeViewController: UIViewController {
         button.setTitle("Tweet", for: .normal)
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
+        button.isEnabled = false
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         button.setTitleColor(.white, for: .normal)
         return button
@@ -44,6 +45,13 @@ class TweetComposeViewController: UIViewController {
         view.addSubview(tweetButton)
         view.addSubview(tweetContentTextView)
         configureConstraints()
+        bindViews()
+    }
+    
+    private func bindViews() {
+        viewModel.$isValidToTweet.sink { [weak self] state in
+            self?.tweetButton.isEnabled = state
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
