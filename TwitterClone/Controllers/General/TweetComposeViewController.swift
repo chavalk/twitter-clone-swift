@@ -49,6 +49,11 @@ class TweetComposeViewController: UIViewController {
         view.addSubview(tweetContentTextView)
         configureConstraints()
         bindViews()
+        tweetButton.addTarget(self, action: #selector(didTapToTweet), for: .touchUpInside)
+    }
+    
+    @objc private func didTapToTweet() {
+        viewModel.dispatchTweet()
     }
     
     private func bindViews() {
