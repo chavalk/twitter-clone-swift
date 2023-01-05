@@ -23,6 +23,7 @@ class TweetComposeViewController: UIViewController {
         button.isEnabled = false
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.white.withAlphaComponent(0.7), for: .disabled)
         return button
     }()
     
