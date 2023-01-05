@@ -9,6 +9,8 @@ import UIKit
 
 class TweetComposeViewController: UIViewController {
 
+    private var viewModel = TweetComposeViewViewModel()
+    
     private let tweetButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +44,11 @@ class TweetComposeViewController: UIViewController {
         view.addSubview(tweetButton)
         view.addSubview(tweetContentTextView)
         configureConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getUserData()
     }
     
     private func configureConstraints() {
