@@ -15,6 +15,7 @@ final class TweetComposeViewViewModel: ObservableObject {
     
     @Published var isValidToTweet: Bool = false
     @Published var error: String = ""
+    var tweetContent: String = ""
     private var user: TwitterUser?
     
     func getUserData() {
@@ -28,5 +29,9 @@ final class TweetComposeViewViewModel: ObservableObject {
                 self?.user = twitterUser
             }
             .store(in: &subscriptions)
+    }
+    
+    func validatoToTweet() {
+        isValidToTweet = !tweetContent.isEmpty
     }
 }
