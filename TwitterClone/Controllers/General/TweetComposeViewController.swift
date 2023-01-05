@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class TweetComposeViewController: UIViewController {
 
     private var viewModel = TweetComposeViewViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
     
     private let tweetButton: UIButton = {
         let button = UIButton(type: .system)
@@ -52,6 +54,7 @@ class TweetComposeViewController: UIViewController {
         viewModel.$isValidToTweet.sink { [weak self] state in
             self?.tweetButton.isEnabled = state
         }
+        .store(in: &subscriptions)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,5 +99,10 @@ extension TweetComposeViewController: UITextViewDelegate {
             textView.text = "What's happening?"
             textView.textColor = .gray
         }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        viewModel.tweetContent = textView.text
+        viewModel.validatoToTweet()
     }
 }
