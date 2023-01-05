@@ -61,6 +61,13 @@ class TweetComposeViewController: UIViewController {
             self?.tweetButton.isEnabled = state
         }
         .store(in: &subscriptions)
+        
+        viewModel.$shouldDismissComposer.sink { [weak self] success in
+            if success {
+                self?.dismiss(animated: true)
+            }
+        }
+        .store(in: &subscriptions)
     }
     
     override func viewWillAppear(_ animated: Bool) {
