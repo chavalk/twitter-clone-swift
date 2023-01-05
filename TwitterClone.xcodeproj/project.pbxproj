@@ -19,6 +19,7 @@
 		BE1984B0294CF5AA0050D866 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BE1984AF294CF5AA0050D866 /* FirebaseStorageCombine-Community */; };
 		BE1984B3294D8D530050D866 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1984B2294D8D530050D866 /* OnboardingViewController.swift */; };
 		BE332743296638E800525354 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE332742296638E800525354 /* Tweet.swift */; };
+		BE33274529663E8A00525354 /* TweetComposeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33274429663E8A00525354 /* TweetComposeViewViewModel.swift */; };
 		BE3332F72947F7C9008A1B18 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */; };
 		BE6E130D294E3E7B00821F9B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E130C294E3E7B00821F9B /* RegisterViewController.swift */; };
 		BE6E1310294EE27900821F9B /* AuthenticationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6E130F294EE27900821F9B /* AuthenticationViewViewModel.swift */; };
@@ -51,6 +52,7 @@
 		BE19849C294CEEBD0050D866 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE1984B2294D8D530050D866 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BE332742296638E800525354 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		BE33274429663E8A00525354 /* TweetComposeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetComposeViewViewModel.swift; sourceTree = "<group>"; };
 		BE3332F62947F7C9008A1B18 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BE6E130C294E3E7B00821F9B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BE6E130F294EE27900821F9B /* AuthenticationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewViewModel.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				BE7016FC295E8F19006A1C3D /* HomeViewViewModel.swift */,
 				BE701700295FA3BC006A1C3D /* ProfileDataFormViewViewModel.swift */,
 				BE70170429641AB0006A1C3D /* ProfileViewViewModel.swift */,
+				BE33274429663E8A00525354 /* TweetComposeViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				BE332743296638E800525354 /* Tweet.swift in Sources */,
 				BEA859EB2945AE7D00A96A37 /* SceneDelegate.swift in Sources */,
 				BEA859FF2945BA6A00A96A37 /* HomeViewController.swift in Sources */,
+				BE33274529663E8A00525354 /* TweetComposeViewViewModel.swift in Sources */,
 				BE6E1310294EE27900821F9B /* AuthenticationViewViewModel.swift in Sources */,
 				BE701701295FA3BC006A1C3D /* ProfileDataFormViewViewModel.swift in Sources */,
 				BE3332F72947F7C9008A1B18 /* ProfileViewController.swift in Sources */,
