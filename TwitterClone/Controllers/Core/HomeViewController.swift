@@ -140,7 +140,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier, for: indexPath) as? TweetTableViewCell else {
             return UITableViewCell()
         }
-        
+        let tweetModel = viewModel.tweets[indexPath.row]
+        cell.configureTweet(with: tweetModel.author.displayName,
+                            username: tweetModel.author.username,
+                            tweetTextContent: tweetModel.tweetContent,
+                            avatarPath: tweetModel.author.avatarPath)
         cell.delegate = self
         return cell
     }
