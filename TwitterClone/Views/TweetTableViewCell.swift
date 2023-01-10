@@ -124,6 +124,13 @@ class TweetTableViewCell: UITableViewCell {
         shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
     }
     
+    func configureTweet(with displayName: String, username: String, tweetTextContent: String, avatarPath: String) {
+        displayNameLabel.text = displayName
+        usernameLabel.text = "@ \(username)"
+        tweetTextContentLabel.text = tweetTextContent
+        avatarImageView.sd_setImage(with: URL(string: avatarPath))
+    }
+    
     private func configureConstraints() {
         let avatarImageViewConstraints = [
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
